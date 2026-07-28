@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Buat Satu Aplikasi Enterprise</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #4F46E5; /* Indigo 700 */
+            --color-secondary: #22C55E; /* Emerald 500 */
+        }
+        .bg-primary { background-color: var(--color-primary); }
+        .text-primary { color: var(--color-primary); }
+        .border-primary { border-color: var(--color-primary); }
+        .hover\:bg-primary-dark:hover { background-color: #4338CA; /* Indigo 800 */ }
+
+        .bg-secondary { background-color: var(--color-secondary); }
+        .text-secondary { color: var(--color-secondary); }
+        .border-secondary { border-color: var(--color-secondary); }
+        .hover\:bg-secondary-dark:hover { background-color: #10B981; /* Emerald 600 */ }
+    </style>
+</head>
+<body class="font-sans antialiased bg-gray-100 min-h-screen flex flex-col">
+    <div class="flex flex-1">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-primary text-white flex flex-col p-4 shadow-lg">
+            <div class="flex items-center justify-center h-16 border-b border-indigo-600 mb-6">
+                <h1 class="text-2xl font-bold tracking-tight">AppBuilder</h1>
+            </div>
+            <nav class="flex-1">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="#" data-entity="applications" class="flex items-center p-3 rounded-lg hover:bg-indigo-600 transition-colors duration-200">
+                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+                            <span>Aplikasi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-entity="components" class="flex items-center p-3 rounded-lg hover:bg-indigo-600 transition-colors duration-200">
+                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343h7.071c.516 0 .959.327 1.147.781L21 12m0 0l-3.5 3.5M21 12l-3.5-3.5"></path></svg>
+                            <span>Komponen</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-entity="users" class="flex items-center p-3 rounded-lg hover:bg-indigo-600 transition-colors duration-200">
+                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.653-.134-1.27-.373-1.839M7 20v-2a3 3 0 015.356-1.857M7 20H2v-2a3 3 0 015.356-1.857m0 0C9.557 14.327 12 11.807 12 9.5a3.5 3.5 0 017 0c0 2.307 2.443 4.827 4.644 6.143M3.5 10.5a3.5 3.5 0 117 0 3.5 3.5 0 01-7 0z"></path></svg>
+                            <span>Pengguna Platform</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="mt-auto pt-4 border-t border-indigo-600">
+                <a href="#" class="flex items-center p-3 rounded-lg hover:bg-indigo-600 transition-colors duration-200">
+                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path></svg>
+                    <span>Keluar</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col">
+            <header class="bg-white shadow-sm h-16 flex items-center justify-between px-6">
+                <h2 class="text-xl font-semibold text-gray-800">Dashboard</h2>
+                <div class="flex items-center space-x-4">
+                    <span class="text-gray-600">Halo, Admin!</span>
+                    <img class="h-8 w-8 rounded-full object-cover" src="https://via.placeholder.com/150" alt="User Avatar">
+                </div>
+            </header>
+
+            <div id="app-content" class="flex-1 p-6 overflow-auto">
+                <!-- Content will be loaded here -->
+                <h1 class="text-3xl font-bold text-gray-800 mb-6">Selamat Datang di Aplikasi Buat Satu Aplikasi Enterprise</h1>
+                <p class="text-gray-600">Pilih entitas dari sidebar untuk memulai.</p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const appContent = document.getElementById('app-content');
+            const navLinks = document.querySelectorAll('aside nav a');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const entity = e.currentTarget.dataset.entity;
+                    let contentHtml = '';
+                    let title = '';
+
+                    // Simple client-side routing simulation
+                    switch (entity) {
+                        case 'applications':
+                            title = 'Daftar Aplikasi';
+                            contentHtml = `
+                                <h1 class="text-3xl font-bold text-gray-800 mb-6">${title}</h1>
+                                <p class="text-gray-600">Manajemen aplikasi Anda.</p>
+                                <div class="mt-4 p-4 bg-white rounded-lg shadow">
+                                    <p>Data aplikasi akan ditampilkan di sini.</p>
+                                    <button class="mt-4 px-4 py-2 bg-secondary text-white rounded-md hover:bg-emerald-600 transition-colors duration-200">Buat Aplikasi Baru</button>
+                                </div>
+                            `;
+                            break;
+                        case 'components':
+                            title = 'Daftar Komponen';
+                            contentHtml = `
+                                <h1 class="text-3xl font-bold text-gray-800 mb-6">${title}</h1>
+                                <p class="text-gray-600">Kelola komponen yang dapat digunakan kembali.</p>
+                                <div class="mt-4 p-4 bg-white rounded-lg shadow">
+                                    <p>Data komponen akan ditampilkan di sini.</p>
+                                    <button class="mt-4 px-4 py-2 bg-secondary text-white rounded-md hover:bg-emerald-600 transition-colors duration-200">Tambah Komponen Baru</button>
+                                </div>
+                            `;
+                            break;
+                        case 'users':
+                            title = 'Daftar Pengguna Platform';
+                            contentHtml = `
+                                <h1 class="text-3xl font-bold text-gray-800 mb-6">${title}</h1>
+                                <p class="text-gray-600">Manajemen pengguna platform.</p>
+                                <div class="mt-4 p-4 bg-white rounded-lg shadow">
+                                    <p>Data pengguna akan ditampilkan di sini.</p>
+                                    <button class="mt-4 px-4 py-2 bg-secondary text-white rounded-md hover:bg-emerald-600 transition-colors duration-200">Tambah Pengguna Baru</button>
+                                </div>
+                            `;
+                            break;
+                        default:
+                            title = 'Halaman Tidak Ditemukan';
+                            contentHtml = `<h1 class="text-3xl font-bold text-gray-800 mb-6">${title}</h1><p class="text-gray-600">Konten tidak ditemukan untuk entitas ini.</p>`;
+                    }
+                    appContent.innerHTML = contentHtml;
+                    document.querySelector('main header h2').textContent = title;
+
+                    // Update active link styling
+                    navLinks.forEach(link => link.classList.remove('bg-indigo-600'));
+                    e.currentTarget.classList.add('bg-indigo-600');
+                });
+            });
+
+            // Trigger initial load for 'applications' or default dashboard
+            // For now, keep default welcome message.
+            // To auto-load applications:
+            // document.querySelector('a[data-entity="applications"]').click();
+        });
+    </script>
+</body>
+</html>
